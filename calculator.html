@@ -1,95 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-  <title>Simple-Calculator!</title>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
-    .background {
-      background-image: linear-gradient(45deg, black, blue);
-      height: 100vh;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-    }
-    .calculator1 {
-      position: absolute;
-      background-color: black;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 15px;
-      padding: 15px;
-    }
-.buttons {
-  width: 50px;
-  height: 50%;
-  font-size: 25px;
-  cursor: pointer;
-  margin: 3px;
-  background-color: rgb(31, 31, 31);
-  border: none;
-  color: aliceblue;
-}
-.buttons:hover {
-  background-color: black;
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+    <title>Simple-Calculator!</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .background {
+        background-image: linear-gradient(45deg, black, blue);
+        height: 100vh;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      .calculator1 {
+        position: absolute;
+        background-color: black;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        padding: 15px;
+      }
+  .buttons {
+    width: 50px;
+    height: 50%;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 3px;
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: aliceblue;
+  }
+  .buttons:hover {
+    background-color: black;
 
-}
-#result {
+  }
+  #result {
+    background-color: white;
+    width: 207px;
+    height: 30px;
+    margin: 5px;
+    color: black;
+    text-align: right;
+    padding: 8px;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <h1>Marck'Anderson</h1>
+      <div class="calculator1">
+        <h1>Calculator</h1>
+        <p id="result"></p>
+        <table>
+          <tr>
+            <td><button class="buttons">C</button></td>
+            <td><button class="buttons"><</button></td>
+            <td><button class="buttons">/</button></td>
+            <td><button class="buttons">X</button></td>
+          </tr>
+          <tr>
+            <td><button class="buttons"onclick="insert('7')">7</button></td>
+            <td><button class="buttons"onclick="insert('8')">8</button></td>
+            <td><button class="buttons"onclick="insert('9')">9</button></td>
+            <td><button class="buttons">-</button></td>
+          </tr>
+          <tr>
+            <td><button class="buttons"onclick="insert('4')">4</button></td>
+            <td><button class="buttons"onclick="insert('5')">5</button></td>
+            <td><button class="buttons"onclick="insert('6')">6</button></td>
+            <td><button class="buttons">+</button></td>
+          </tr>
+          <tr>
+            <td><button class="buttons"onclick="insert('1')">1</button></td>
+            <td><button class="buttons"onclick="insert('2')">2</button></td>
+            <td><button class="buttons"onclick="insert('3')">3</button></td>
+            <td rowspan="2"><button class="buttons" style="height:85px;">=</button></td>
+          </tr>
+          <tr>
+            <td colspan="2 "><button class="buttons" style="width:106px;">0</button></td>
+            <td><button class="buttons">.</button></td>
+          </tr>
 
-}
-  </style>
-</head>
-<body>
-<div class="background">
-  <h1>Marck'Anderson</h1>
-  <div class="calculator1">
-    <h1>Calculator</h1>
-    <p id="result"></p>
-    <table>
-      <tr>
-        <td><button class="buttons">C</button></td>
-        <td><button class="buttons"><</button></td>
-        <td><button class="buttons">/</button></td>
-        <td><button class="buttons">X</button></td>
-      </tr>
-      <tr>
-        <td><button class="buttons">7</button></td>
-        <td><button class="buttons">8</button></td>
-        <td><button class="buttons">9</button></td>
-        <td><button class="buttons">-</button></td>
-      </tr>
-      <tr>
-        <td><button class="buttons">4</button></td>
-        <td><button class="buttons">5</button></td>
-        <td><button class="buttons">6</button></td>
-        <td><button class="buttons">+</button></td>
-      </tr>
-      <tr>
-        <td><button class="buttons">1</button></td>
-        <td><button class="buttons">2</button></td>
-        <td><button class="buttons">3</button></td>
-        <td rowspan="2"><button class="buttons" style="height:85px;">=</button></td>
-      </tr>
-      <tr>
-        <td colspan="2 "><button class="buttons" style="width:106px;">0</button></td>
-        <td><button class="buttons">.</button></td>
-      </tr>
-
-    </table>
-
-
-
-  </div>
-
-
-
-</div>
-</body>
+        </table>
+      </div>
+    </div>
+    <script>
+      function insert(num)
+      {
+        document.getElementById('result').innerHTML = num;
+      }
+    </script>
+  </body>
 </html>
