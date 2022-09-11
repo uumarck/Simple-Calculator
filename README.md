@@ -1,2 +1,2 @@
 # Simple-Calculator
-A 
+A simple calculator for good practices and knowledge 
