@@ -25,14 +25,14 @@
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 15px;
-        padding: 15px;
+        padding: 14px;
       }
   .buttons {
-    width: 50px;
+    width: 48px;
     height: 50%;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
-    margin: 3px;
+    margin: 5px;
     background-color: rgb(31, 31, 31);
     border: none;
     color: aliceblue;
@@ -43,12 +43,12 @@
   }
   #result {
     background-color: white;
-    width: 207px;
-    height: 30px;
-    margin: 5px;
+    width: 219px;
+    height: 24px;
+    margin: 7px;
     color: black;
     text-align: right;
-    padding: 8px;
+    padding: 5px;
   }
     </style>
   </head>
@@ -60,8 +60,8 @@
         <p id="result"></p>
         <table>
           <tr>
-            <td><button class="buttons"onclick="insert('7')">C</button></td>
-            <td><button class="buttons"><</button></td>
+            <td><button class="buttons"onclick="clean()">C</button></td>
+            <td><button class="buttons"onclick="back()"><</button></td>
             <td><button class="buttons"onclick="insert('/')">/</button></td>
             <td><button class="buttons"onclick="insert('*')">X</button></td>
           </tr>
@@ -81,21 +81,39 @@
             <td><button class="buttons"onclick="insert('1')">1</button></td>
             <td><button class="buttons"onclick="insert('2')">2</button></td>
             <td><button class="buttons"onclick="insert('3')">3</button></td>
-            <td rowspan="2"><button class="buttons"onclick="insert('=')" style="height:85px;">=</button></td>
+            <td rowspan="2"><button class="buttons"onclick="calcular()" style="height:85px;">=</button></td>
           </tr>
           <tr>
             <td colspan="2 "><button class="buttons"onclick="insert('0')" style="width:106px;">0</button></td>
-            <td><button class="buttons">.</button></td>
+            <td><button class="buttons"onclick="insert('.')">.</button></td>
           </tr>
 
         </table>
       </div>
     </div>
     <script>
-      function insert(num)
-      {
+      function insert(num){
         var numero = document.getElementById('result').innerHTML;
         document.getElementById('result').innerHTML = numero + num;
+      }
+
+      function clean(){
+        document.getElementById('result').innerHTML = "";
+      }
+
+      function back() {
+        var result = document.getElementById('result').innerHTML;
+        document.getElementById('result').innerHTML = result.substring(0, result.length -1);
+      }
+
+      function calcular() {
+        var result = document.getElementById('result').innerHTML;
+        if(result){
+          document.getElementById('result').innerHTML = eval(result);
+        }
+        else{
+          document.getElementById('result').innerHTML = "Nothing to calculate!"
+        }
       }
 
     </script>
